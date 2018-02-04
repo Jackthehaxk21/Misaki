@@ -19,13 +19,14 @@ class Cry extends Social {
       if (message.settings.socialSystem === "true") {
         if (!(await this.cmdPay(message, message.author.id, this.help.cost))) return;
       }
+      if (message.member == target.first()) return message.reponse(undefined, "You cannot cry on yourself !");
       const msg = await message.channel.send(`<a:typing:397490442469376001> **${message.member.displayName}** wants to cry it all away...`);
       const cry = await this.cmdMoe("cry");
       await msg.edit({
         embed: {
           "title": "Click here if the image failed to load.",
           "url": `https://cdn.ram.moe/${cry}`,
-          "description": `**${target.first().displayName}**, **${message.member.displayName}** just cried on your shoulder.`,
+          "description": `**${target.first().displayName}**, **${target.first().displayName}** just cried on your shoulder.`,
           "color": message.guild.me.roles.highest.color || 5198940,
           "image": {
             "url": `https://cdn.ram.moe/${cry}`
