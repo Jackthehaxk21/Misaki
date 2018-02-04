@@ -26,7 +26,7 @@ class Cry extends Social {
         embed: {
           "title": "Click here if the image failed to load.",
           "url": `https://cdn.ram.moe/${cry}`,
-          "description": `**${target.first().displayName}**, **${target.first().displayName}** just cried on your shoulder.`,
+          "description": `**${target.first().displayName}**, **${message.member.displayName}** just cried on your shoulder.`,
           "color": message.guild.me.roles.highest.color || 5198940,
           "image": {
             "url": `https://cdn.ram.moe/${cry}`
